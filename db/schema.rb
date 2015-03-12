@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312114637) do
+ActiveRecord::Schema.define(version: 20150312135545) do
+
+  create_table "creature_locations", force: :cascade do |t|
+    t.integer  "location_id"
+    t.integer  "creature_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "creaturelocations", force: :cascade do |t|
+    t.integer  "location_id"
+    t.integer  "creature_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "creatures", force: :cascade do |t|
     t.string   "name"
@@ -28,12 +42,39 @@ ActiveRecord::Schema.define(version: 20150312114637) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "moves", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "max_number"
+    t.string   "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_creature_moves", force: :cascade do |t|
+    t.integer  "user_creature_id"
+    t.integer  "move_id"
+    t.integer  "max_number"
+    t.integer  "experience_points"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
   create_table "user_creatures", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "creature_id"
     t.string   "nickname"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "hp"
+  end
+
+  create_table "usercreaturemoves", force: :cascade do |t|
+    t.integer  "user_creature_id"
+    t.integer  "move_id"
+    t.integer  "max_number"
+    t.integer  "experience_points"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "users", force: :cascade do |t|
