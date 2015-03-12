@@ -1,0 +1,7 @@
+class CatchesController < ApplicationController
+
+	def index 
+	@creatures = Creatures.all
+	end
+
+end
