@@ -1,3 +1,3 @@
 class Creature < ActiveRecord::Base
-belongs_to :user_creature
+has_many :user_creatures
 end

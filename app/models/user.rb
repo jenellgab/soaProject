@@ -14,8 +14,8 @@ devise :database_authenticatable, :registerable,
   end
 
 
-has_many :user_creature
-has_many :creature, :through => :user_creature
+has_many :user_creatures
+has_many :creatures, :through => :user_creature
 
 
 end
