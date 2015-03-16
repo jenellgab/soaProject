@@ -11,16 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312135545) do
+ActiveRecord::Schema.define(version: 20150316052527) do
 
   create_table "creature_locations", force: :cascade do |t|
-    t.integer  "location_id"
-    t.integer  "creature_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "creaturelocations", force: :cascade do |t|
     t.integer  "location_id"
     t.integer  "creature_id"
     t.datetime "created_at",  null: false
@@ -66,15 +59,6 @@ ActiveRecord::Schema.define(version: 20150312135545) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "hp"
-  end
-
-  create_table "usercreaturemoves", force: :cascade do |t|
-    t.integer  "user_creature_id"
-    t.integer  "move_id"
-    t.integer  "max_number"
-    t.integer  "experience_points"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,9 +1,5 @@
 class Creature < ActiveRecord::Base
 has_many :user_creatures
+belongs_to :user
 
-	creature = Creature.new
-	creature.name = "Spammy"
-	creature.element_type = "Earth"
-	creature.description = "Salty"
-	creature.save
 end
