@@ -5,6 +5,8 @@ resources :catches
 resources :battles
 resources :trades
 resources :heals
+resources :creature_locations
+
 
   get "/creatures", to: "creatures#index", as: :creatures
   get "/creature/:id", to: "creatures#show", as: :creature
@@ -16,6 +18,20 @@ resources :heals
 
  get "/locations", to: "locations#index", as: :locations
  get "/locations/new", to: "locations#new", as: :new_location
+ get "/location/:id", to: "locations#show", as: :location
+ post "/locations", to: "locations#create", as: :create_location
+  get "/locations/:id/edit", to: "locations#edit", as: :edit_location
+  post "/locations/:id/update", to: "locations#update", as: :update_location
+  delete "/locations/:id", to: "locations#destroy", as: :destroy_location
+
+get "/creature_locations", to: "creature_locations#index", as: :creature_locations
+get "/creature_locations/new", to: "creature_locations#new", as: :new_creature_location
+get "/creature_location/:id", to: "creature_locations#show", as: :creature_location
+ post "/creature_locations", to: "creature_locations#create", as: :create_creature_location
+  get "/creature_locations/:id/edit", to: "creature_locations#edit", as: :edit_creature_location
+  post "/creature_locations/:id/update", to: "creature_locations#update", as: :update_creature_location
+  delete "/creature_locations/:id", to: "creature_locations#destroy", as: :destroy_creature_location
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
