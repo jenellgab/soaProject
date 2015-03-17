@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316052527) do
+ActiveRecord::Schema.define(version: 20150317092211) do
 
   create_table "creature_locations", force: :cascade do |t|
     t.integer  "location_id"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150316052527) do
 
   create_table "locations", force: :cascade do |t|
     t.string   "name"
-    t.integer  "gps_coordinate"
+    t.string   "gps_coordinate"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
