@@ -1,10 +1,14 @@
-<h1> Catch me <h1>
+<h3>CATCH A CREATURE</h3>
+<%= link_to "CLICK HERE TO ADD/EDIT/DESTROY CREATURES IN DATABASE", creatures_path %>
+<!-- nilagay ko lang yung link above para madali makita lahat creatures hehe -->
+
+  <% @creatures.each do |creature| %>
+
+      <b><center><%= creature.name %></b></center>
+      <center><%= creature.element_type %></center>     
+      <center><%= creature.description %></center>
+      <br>
+
+  <% end %>
 
 
-<% @creatures.each do |c| %>
-
-		<h3><%= c.name %></h3>
-		<h3><%= c.element_type %></h3>
-		<h3><%= c.description %></h3>
-
-<% end %>
