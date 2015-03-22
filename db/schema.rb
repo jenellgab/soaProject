@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317092211) do
+ActiveRecord::Schema.define(version: 20150322081905) do
+
+  create_table "catches", force: :cascade do |t|
+    t.integer  "gps_coordinate"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "creature_locations", force: :cascade do |t|
     t.integer  "location_id"

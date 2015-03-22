@@ -1,0 +1,17 @@
+
+<strong>Creature</strong>: <br>
+<table width="100%">
+  <tr>
+    <th>ID</th>
+	<th> Name </th>
+	
+  </tr>
+    <tr>
+     <td><%= @cl.id %></td>
+     <td><%= @cl.location_id %></td>
+<td><%= @cl.creature_id %></td>
+    </tr>
+<tr>
+</tr>
+
+ </table>

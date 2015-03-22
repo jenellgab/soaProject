@@ -45,13 +45,10 @@
   <%= f.input :creature_id, as: :select, :collection => @creatures,:label_method => :name,:value_method => :id,:label => "Creatures" %> 
   <hr>
 
-
-<% @locations.each do |location| %>
   <%= f.input :location_id, as: :select, :collection => @locations,:label_method => :name,:value_method => :id,:label => "Locations" %> 
- <% end %>
+
   <hr>
   <%= f.submit "Create Record" %>
 <% end %>
 </div>
 
-<%= link_to "Back to creature_locations", creature_locations_path %>

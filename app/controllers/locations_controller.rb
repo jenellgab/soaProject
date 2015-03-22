@@ -22,7 +22,7 @@ def index
     @location = Location.new(location_params)
 
     if @location.save
-        redirect_to creatures_path
+        redirect_to locations_path
     else 
         render :template => "locations/new"
     end

@@ -1,11 +1,29 @@
 class CatchesController < ApplicationController
 
-	def index 
-	 
-	@creatures = Creature.all
-	@locations = Location.new
-	
+ 
+	def index
+	 redirect_to action: "new"
 	end
+
+	def new 
+	 
+    	render template: "catches/new"
+
+	end
+
+	
+	def show
+	@place = Location.find_by(gps_coordinate: params[:gps])
+	@l_id = @place.id
+	@cl = CreatureLocation.find_by(location_id: @l_id)
+	@c = @cl.id
+	@creature = Creature.find(@cl.id)
+	
+
+	render template: "catches/show"
+	end
+
+
 
 
 end

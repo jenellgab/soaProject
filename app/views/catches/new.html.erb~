@@ -1,0 +1,9 @@
+<h1>hello</h1>
+
+<%= form_tag("/catches/show", method: "post" ) do %>
+  <%= label_tag(:gps, "Coordinate") %>
+  <%= text_field_tag(:gps) %>
+  <%= submit_tag("Go!") %>
+
+<% end %>
+

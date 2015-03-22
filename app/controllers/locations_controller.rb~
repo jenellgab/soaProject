@@ -19,7 +19,7 @@ def index
   end
 
   def create
-    @location = Location.new(creature_params)
+    @location = Location.new(location_params)
 
     if @location.save
         redirect_to creatures_path
@@ -47,7 +47,7 @@ def index
   def destroy
     @location = Location.find(params[:id])
     @location.destroy!
-    redirect_to creatures_path
+    redirect_to locations_path
   end
 
   def location_params

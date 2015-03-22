@@ -1,4 +1,4 @@
-<h3>Location</h3>
+<h3>Creatures</h3>
   <%= link_to "New Locations", new_location_path %>
 
 

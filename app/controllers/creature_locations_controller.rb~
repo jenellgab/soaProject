@@ -1,9 +1,8 @@
 class CreatureLocationsController < ApplicationController
 
 def index
-    @creature_locations = CreatureLocation.all
-    @creatures = Creature.all
-    @locations = Location.all
+
+    @location = Location.all
 
     render template: "creature_locations/index"
   end
@@ -25,11 +24,7 @@ def index
 
   def create
     @creature_location = CreatureLocation.new(creature_location_params)
-	@creature = params[:creature_id]
-	@creature_location.creature_id = @creature
-	@location = params[:location_id]
-	@creature_location.location_id = @location
-	@creature_location.save!
+
 	
     if @creature_location.save
         redirect_to creature_locations_path
