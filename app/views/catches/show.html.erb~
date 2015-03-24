@@ -1,17 +1,15 @@
 
 <strong>Creature</strong>: <br>
-<table width="100%">
+<table width="50%">
   <tr>
     <th>ID</th>
-	<th> Name </th>
-	
+	<th> Name </th>	
   </tr>
     <tr>
-     <td><%= @cl.id %></td>
-     <td><%= @cl.location_id %></td>
-<td><%= @cl.creature_id %></td>
+     <td><%= @creature.id %></td>
+     <td><%= @creature.name %></td>
     </tr>
-<tr>
-</tr>
-
  </table>
+<%= form_tag("/catches/caught", method: "get" ) do %>
+  <%= submit_tag("Catch!") %>
+<% end %>

@@ -22,6 +22,18 @@ class CatchesController < ApplicationController
 
 	render template: "catches/show"
 	end
+	
+	def caught
+	
+	@pet = UserCreature.new
+	@pet.user = current_user
+	@pet.creature_id = @c
+	flash[:notice] = "You have successfully..."
+    	redirect_to root_url
+
+	render template: "catches/new"
+	
+	end
 
 
 
