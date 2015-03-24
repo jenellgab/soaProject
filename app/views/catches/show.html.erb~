@@ -10,6 +10,6 @@
      <td><%= @creature.name %></td>
     </tr>
  </table>
-<%= form_tag("/catches/caught", method: "get" ) do %>
+<%= form_tag("/catches/caught", method: "post" ) do %>
   <%= submit_tag("Catch!") %>
 <% end %>

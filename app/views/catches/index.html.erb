@@ -1,15 +1,21 @@
-<h3>CATCH A CREATURE</h3>
-<%= link_to "CLICK HERE TO ADD/EDIT/DESTROY CREATURES IN DATABASE", creatures_path %>
-<%= link_to "CLICK HERE TO ADD/EDIT/DESTROY LOCATIONS IN DATABASE", locations_path %>
-<!-- nilagay ko lang yung link above para madali makita lahat creatures hehe -->
+<h3>User Creature</h3>
 
-  <% @creatures.each do |creature| %>
-
-      <b><center><%= creature.name %></b></center>
-      <center><%= creature.element_type %></center>     
-      <center><%= creature.description %></center>
-      <br>
-
-  <% end %>
-
-
+<div align="right" display="inline">
+<table class="table1" width="100%" >
+<tr>
+ <th><center>ID</center></th>
+    <th><center>User</center></th>
+    <th><center>Creature </center></th>
+<th><center>Nickname </center></th>
+  </tr>
+<% @pets.each do |p| %>
+    <tr>
+      <td><center><%= p.id %></center></td>
+      <td><center><%= p.user_id %></center></td>
+      <td><center><%= p.creature_id %></center></td>
+	<td><center><%= p.nickname%></center></td>          
+ 
+    </tr>
+ <% end %>
+</table>
+</div>

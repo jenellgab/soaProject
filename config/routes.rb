@@ -9,7 +9,8 @@ resources :moves
 resources :creature_locations
 resources :locations
 resources :creatures
-
+resources :user_creatures
+post "/catches/caught" => "catches#caught"
  
   
 

@@ -2,7 +2,8 @@ class CatchesController < ApplicationController
 
  
 	def index
-	 redirect_to action: "new"
+	@pets = UserCreature.all
+	 render template: "catches/index"
 	end
 
 	def new 
@@ -27,15 +28,14 @@ class CatchesController < ApplicationController
 	
 	@pet = UserCreature.new
 	@pet.user = current_user
-	@pet.creature_id = @c
+	@pet.nickname = params[:name]
+	@pet.creature_id = 
+	@pet.save!
 	flash[:notice] = "You have successfully..."
-    	redirect_to root_url
+    	redirect_to catches_path
 
-	render template: "catches/new"
 	
 	end
-
-
 
 
 end
