@@ -34,8 +34,12 @@ class UserCreaturesController < ApplicationController
 	flash[:notice] = "You have successfully..."
     	redirect_to user_creatures_path
 
-	
 	end
+  	def destroy
+    	@c = UserCreature.find(params[:id])
+    	@c.destroy!
+    	redirect_to user_creatures_path
+  	end
 
 
 end

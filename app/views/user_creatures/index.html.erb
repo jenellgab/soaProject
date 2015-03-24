@@ -15,6 +15,10 @@
       <td><center><%= p.creature_id %></center></td>
 	<td><center><%= p.nickname%></center></td>          
  
+<td><center>
+
+        <%= link_to "Destroy", user_creature_path(p.id), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+      </center></td>
     </tr>
  <% end %>
 </table>
