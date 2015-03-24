@@ -10,7 +10,7 @@ resources :creature_locations
 resources :locations
 resources :creatures
 resources :user_creatures
-post "/catches/caught" => "catches#caught"
+post "/user_creatures/:id" => "user_creatures#caught"
  
   
 

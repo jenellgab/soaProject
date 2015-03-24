@@ -25,11 +25,11 @@ class UserCreaturesController < ApplicationController
 	end
 	
 	def caught
-	@c = Creature.find(params[:id])
+	@creature = Creature.find(params[:id])
 	@pet = UserCreature.new
 	@pet.user = current_user
 	@pet.nickname = params[:name]
-	@pet.creature_id = 
+	@pet.creature_id = @creature.id
 	@pet.save!
 	flash[:notice] = "You have successfully..."
     	redirect_to user_creatures_path
