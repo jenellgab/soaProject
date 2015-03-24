@@ -1,1 +1,19 @@
-<h1> Trade <h1> 
+<h3>Trades</h3>
+
+<div align="right" display="inline">
+<table class="table1" width="40%" >
+<tr>
+ <th><center>ID</center></th>
+    <th><center>Username</center></th>
+  </tr>
+<% @u.each do |u| %>
+    <tr>
+      <td><center><%= u.id %></center></td>
+      <td><center><%= u.username%></center></td>  
+ 
+
+
+    </tr>
+ <% end %>
+</table>
+</div>
