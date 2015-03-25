@@ -14,8 +14,13 @@ devise :database_authenticatable, :registerable,
   end
 
 
+
 has_many :user_creatures
 has_many :creatures, :through => :user_creature
+has_many :trades, foreign_key: :trade_id
 
+	def to_s
+		self.email
+	end
 
 end

@@ -11,13 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322081905) do
-
-  create_table "catches", force: :cascade do |t|
-    t.integer  "gps_coordinate"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
+ActiveRecord::Schema.define(version: 20150325085556) do
 
   create_table "creature_locations", force: :cascade do |t|
     t.integer  "location_id"
@@ -49,6 +43,15 @@ ActiveRecord::Schema.define(version: 20150322081905) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "trades", force: :cascade do |t|
+    t.integer  "user_id_a"
+    t.integer  "user_id_b"
+    t.integer  "creature_a"
+    t.integer  "creature_b"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_creature_moves", force: :cascade do |t|
     t.integer  "user_creature_id"
     t.integer  "move_id"
@@ -65,6 +68,15 @@ ActiveRecord::Schema.define(version: 20150322081905) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "hp"
+  end
+
+  create_table "usercreaturemoves", force: :cascade do |t|
+    t.integer  "user_creature_id"
+    t.integer  "move_id"
+    t.integer  "max_number"
+    t.integer  "experience_points"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "users", force: :cascade do |t|
